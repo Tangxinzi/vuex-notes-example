@@ -7,7 +7,7 @@
     <a class="ui right floated basic violet button" v-on:click="create">添加笔记</a>
     <div class="ui divided items">
       <note v-for="entity in entities" :key="entity.id" v-bind:entity="entity"></note>
-      <span class="ui small disabled header">
+      <span class="ui small disabled header" v-if="!entities.length">
         还没有笔记，请按下“添加笔记”按钮。
       </span>
     </div>
