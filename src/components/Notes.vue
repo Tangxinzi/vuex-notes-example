@@ -4,7 +4,7 @@
       <i class="paw icon"></i>
       Notes App _ Vue.js + Vuex Example
     </h4>
-    <a class="ui right floated basic violet button">添加笔记</a>
+    <a class="ui right floated basic violet button" v-on:click="create">添加笔记</a>
     <div class="ui divided items">
       <note v-for="entity in entities" :key="entity.id" v-bind:entity="entity"></note>
       <span class="ui small disabled header">
@@ -23,7 +23,8 @@ export default {
   },
   methods: {
     ...mapActions([
-      'initial'
+      'initial',
+      'create'
     ])
   },
   computed: {

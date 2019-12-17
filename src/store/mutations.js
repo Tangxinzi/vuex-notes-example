@@ -17,5 +17,16 @@ export default {
 
         state.entities = _entities
       })
+  },
+  createEntity (state) {
+    loadCollection('notes')
+      .then((collection) => {
+        const entity = collection.insert({
+          body: ''
+        })
+
+        db.saveDatabase()
+        state.entities.unshift(entity)
+      })
   }
 }
