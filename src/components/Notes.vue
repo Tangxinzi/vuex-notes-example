@@ -16,8 +16,16 @@
 
 <script>
 import Note from './Note'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default {
+  created () {
+    this.initial()
+  },
+  methods: {
+    ...mapActions([
+      'initial'
+    ])
+  },
   computed: {
     ...mapGetters([
       'entities'
